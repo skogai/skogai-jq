@@ -23,7 +23,7 @@ Philosophy: Transformations should be **discoverable** (via schema), **verifiabl
 ### Running Tests
 
 ```bash
-# Run all tests (14 transformations, ~100+ test cases)
+# Run all tests (70 transformations)
 ./test-all.sh
 
 # Run specific transformation tests
@@ -224,4 +224,4 @@ echo "All <name> tests passed!"
 - **IMPLEMENTATION_SPEC.md**: Complete implementation guide with all patterns
 - **README.md**: User-facing documentation and usage examples
 - **USAGE_EXAMPLES.md**: Real-world usage scenarios
-- **../../todo/jq-transforms/**: Vision, backlog, patterns, proposals
+- **./**: Vision, backlog, patterns, proposals

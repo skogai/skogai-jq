@@ -1,14 +1,13 @@
 ---
 name: skogai-jq
-description: Use when performing JSON transformations, manipulating nested JSON structures, filtering arrays, extracting values, validating JSON schemas, or composing multi-step JSON operations. This skill provides 60+ schema-driven jq transformations optimized for AI agent discoverability.
-permalink: skogai/skills/skogai-jq/skill
+description: Use when performing JSON transformations, manipulating nested JSON structures, filtering arrays, extracting values, validating JSON schemas, or composing multi-step JSON operations. This skill provides 70 schema-driven jq transformations optimized for AI agent discoverability.
 ---
 
 # jq-transforms
 
 ## Overview
 
-jq-transforms is a schema-driven JSON transformation library built specifically for AI agents. It provides 60+ composable transformations for JSON manipulation, each with clear input/output contracts, comprehensive tests, and minimal implementations. The library emphasizes discoverability through schemas and composability through Unix pipes.
+jq-transforms is a schema-driven JSON transformation library built specifically for AI agents. It provides 70 composable transformations for JSON manipulation, each with clear input/output contracts, comprehensive tests, and minimal implementations. The library emphasizes discoverability through schemas and composability through Unix pipes.
 
 ## When to Use This Skill
 
@@ -87,6 +86,14 @@ Convert between JSON types safely.
 **Common examples:**
 
 - `to-string`, `to-number`, `to-boolean`, `to-array`, `to-object`
+
+## Resource paths
+
+Resolve all resource paths relative to the directory containing this `SKILL.md`,
+not the user's working directory. Keep the entire skill bundle available.
+Read the selected transform's `schema.json` before choosing arguments, then use
+an absolute path with `jq -f` when processing files outside the skill directory.
+Bash and jq 1.6+ are prerequisites; no package installation is part of this skill.
 
 ## Usage Pattern
 
@@ -190,7 +197,7 @@ Refer to `references/IMPLEMENTATION_SPEC.md` for complete implementation pattern
 
 This skill bundles comprehensive reference documentation (loaded only when needed):
 
-- **CHEAT_SHEET.md** - Quick reference of all 60+ transforms with arguments and examples
+- **CHEAT_SHEET.md** - Quick reference of all 70 transforms with arguments and examples
 - **IMPLEMENTATION_SPEC.md** - Complete implementation guide with patterns and pitfalls
 - **README.md** - User-facing documentation and design principles
 - **USAGE_EXAMPLES.md** - Real-world usage scenarios
@@ -207,4 +214,4 @@ Test transforms before use:
 ./test-all.sh
 ```
 
-Each transform has 8-17 test cases covering happy paths, falsy values, type safety, boundary conditions, and error cases.
+Test coverage varies by transform. Run the relevant suite before relying on a transform; the full suite checks all 70 transforms.

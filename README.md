@@ -4,9 +4,28 @@ type: note
 permalink: skogai/skills/skogai-jq/readme
 ---
 
-# jq-transforms
+# skogai-jq
 
 Schema-driven JSON transformation library for AI agents.
+
+## Canonical reusable skill
+
+This repository is the source of truth for all 70 transforms in `skogai-jq`.
+The archived copy in `skogai-core/todo/skills/skogai-jq` is retired.
+Keep the complete checkout together: `SKILL.md`, `agents/openai.yaml`, references,
+transforms, schemas, and tests form one reusable skill bundle.
+
+Clone this repository into your harness's local skill directory as `skogai-jq`,
+or symlink the whole checkout into that directory. With Codex's default location:
+
+```bash
+mkdir -p ~/.codex/skills
+ln -s /absolute/path/to/repos/skogai-jq ~/.codex/skills/skogai-jq
+```
+
+Use an unused destination, reload the harness as required, then invoke
+`$skogai-jq`. Live harness discovery and installation have not been tested here.
+Bash and jq 1.6+ are required; consolidation tests used jq 1.8.2.
 
 ## Overview
 
@@ -23,7 +42,7 @@ This library is built **for AI agents**, not humans. Each transformation:
 - Can be composed with other transformations
 - Can be verified by running tests
 
-See [vision.md](../../todo/jq-transforms/vision.md) for full project philosophy.
+See [vision.md](vision.md) for full project philosophy.
 
 ## Installation
 
@@ -204,9 +223,9 @@ See existing transformations for examples.
 - **API Response Handling**: Extract and transform API responses
 - **Log Processing**: Filter and aggregate JSON logs
 
-## Future Transformations
+## Historical planning
 
-See [backlog.md](../../todo/jq-transforms/backlog.md) for planned transformations including:
+See [backlog.md](backlog.md) for historical plans; these categories are already implemented:
 
 - Array operations (map, filter, reduce)
 - String operations (split, join, replace)
@@ -216,9 +235,9 @@ See [backlog.md](../../todo/jq-transforms/backlog.md) for planned transformation
 ## Resources
 
 - [jq Manual](https://jqlang.github.io/jq/manual/)
-- [jq Patterns](../../todo/jq-transforms/patterns.md)
-- [Examples](../../todo/jq-transforms/examples.md)
-- [Vision](../../todo/jq-transforms/vision.md)
+- [jq Patterns](patterns.md)
+- [Examples](examples.md)
+- [Vision](vision.md)
 
 ## License
 
